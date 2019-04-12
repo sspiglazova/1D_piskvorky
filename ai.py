@@ -13,14 +13,14 @@ def tah_pocitace(pole):
     seznam = najdi_pozice(pole, 'x')
     for cislo_policka in seznam:
         if  (cislo_policka == 0) and (pole[cislo_policka + 1] == '-'):
-            return tah(pole, cislo_policka + 1, 'o')
+            return util.tah(pole, cislo_policka + 1, 'o')
         elif (cislo_policka == 19) and (pole[cislo_policka - 1] == '-'):
-            return tah(pole, cislo_policka - 1, 'o')
+            return util.tah(pole, cislo_policka - 1, 'o')
         elif (cislo_policka > 0) and (cislo_policka < 19):
             if (pole[cislo_policka + 1] == '-'):
-                return tah(pole, cislo_policka + 1, 'o')
+                return util.tah(pole, cislo_policka + 1, 'o')
             elif (pole[cislo_policka - 1] == '-'):
-                return tah(pole, cislo_policka - 1, 'o')
+                return util.tah(pole, cislo_policka - 1, 'o')
 
     while True:
         cislo_policka = randrange(20)
