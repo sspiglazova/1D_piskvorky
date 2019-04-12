@@ -1,3 +1,4 @@
+import util
 from random import randrange
 
 def najdi_pozice(pole, hledany):
@@ -24,4 +25,4 @@ def tah_pocitace(pole):
     while True:
         cislo_policka = randrange(20)
         if '-' in pole[cislo_policka]:
-            return tah(pole, cislo_policka, 'o')
+            return util.tah(pole, cislo_policka, 'o')

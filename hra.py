@@ -13,6 +13,6 @@ def ano_nebo_ne(otazka):
 
 if ano_nebo_ne('Chceš si zahrát hru? '):
     print(' Zaciname piskvorky ')
-    piskvorky1d()
+    piskvorky.piskvorky1d()
 else:
     print('Škoda.')
