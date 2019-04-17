@@ -18,25 +18,25 @@ def tah_hrace(pole, cislo_policka):
         else:
             print('bud pole je obsazeno nebo cislo je zaporne nebo prilis velke')
 
-def piskvorky1d(pole):
-        cislo_policka = 0
-        while '-' in pole:
-            print(pole)
-            print('zadej cislo policky od 0 do {}'. format(len(pole)-1))
-            # kontrola cislo_policka pro uzivatele
-            while True:
-                try:
-                    cislo_policka = int(input())
-                    if cislo_policka < 0:
-                        raise ArithmeticError('cislo je zaporne')
-                except ValueError:
-                    print('to neni cislo')
-                except ArithmeticError:
-                    print('cislo je zaporne')
+def zadej_cislo_policka(otazka):
+    while True:
+        try:
+            cislo_policka = int(input(otazka))
+            if cislo_policka < 0:
+                raise ArithmeticError('cislo je zaporne')
+            return cislo_policka
+        except ValueError:
+            print('to neni cislo')
+        except ArithmeticError:
+            print('cislo je zaporne')
 
-            pole = tah_hrace(pole, cislo_policka)
-            pole = ai.tah_pocitace(pole)
-            result = vyhodnot(pole)
-            if result != '-':
-                print(result)
-                break
+def piskvorky1d(pole):
+    while '-' in pole:
+        print(pole)
+        cislo_policka = zadej_cislo_policka('Zadej cislo_policka: ')
+        pole = tah_hrace(pole, cislo_policka)
+        pole = ai.tah_pocitace(pole)
+        result = vyhodnot(pole)
+        if result != '-':
+            print(result)
+            break

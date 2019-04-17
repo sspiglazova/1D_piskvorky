@@ -1,9 +1,5 @@
 import piskvorky, ai, util, pytest
 
-
-def test_tah_hrace():
-    assert util.tah("--------------------", 19, "x") == "-------------------x"
-
 # test funkce vyhodnot
 def test_vyhodnot_x():
     assert piskvorky.vyhodnot("----xxx-------------") == ('x', "----xxx-------------")
@@ -25,3 +21,10 @@ def test_najdi_pozice():
 def test_tah_pocitace():
     seznam = [1, 3, 9, 18]
     assert ai.tah_pocitace('-xox----oxo-------x-') == ('oxox----oxo-------x-')
+
+# test  funkce tah
+def test_tah_x():
+    assert util.tah ('-xox----oxo-------x-', 19, 'x') == '-xox----oxo-------xx'
+
+def test_tah_o():
+    assert util.tah ('-xox----oxo-------x-', 0, 'o') == 'oxox----oxo-------x-'
