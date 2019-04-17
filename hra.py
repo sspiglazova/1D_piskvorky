@@ -13,6 +13,8 @@ def ano_nebo_ne(otazka):
 
 if ano_nebo_ne('Chceš si zahrát hru? '):
     print(' Zaciname piskvorky ')
-    piskvorky.piskvorky1d()
+    velikost_pole = int(input('Zadej velikost pole: '))
+    pole = '-'*velikost_pole
+    piskvorky.piskvorky1d(pole)
 else:
     print('Škoda.')
