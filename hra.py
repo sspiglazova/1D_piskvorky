@@ -15,13 +15,13 @@ def zadej_velikost_pole(otazka):
     while True:
         try:
             velikost_pole = int(input(otazka))
-            if velikost_pole < 0:
-                raise ArithmeticError('cislo je zaporne')
+            if velikost_pole <= 0:
+                raise ArithmeticError('cislo je zaporne nebo je 0')
             return velikost_pole
         except ValueError:
             print('to neni cislo')
         except ArithmeticError:
-            print('cislo je zaporne')
+            print('cislo je zaporne nebo je nula')
 
 if ano_nebo_ne('Chceš si zahrát hru? '):
     print(' Zaciname piskvorky ')
